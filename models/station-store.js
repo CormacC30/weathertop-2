@@ -1,7 +1,7 @@
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
 
-const db = initStore("stations");
+const db = initStore("stations.json");
 
 export const stationStore = {
   async getAllStations() {
