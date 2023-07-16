@@ -1,0 +1,26 @@
+{
+  "file": "./models/readings.json",
+  "readings": [
+    {
+      "code": 100,
+      "temperature": 11,
+      "windspeed": 25,
+      "_id": "9b1c1cfc-73a5-462a-98ec-c8e677178fa6",
+      "stationid": "89cad73b-c33a-4ae8-91d0-f0c8aff4b722"
+    },
+    {
+      "code": 100,
+      "temperature": 11,
+      "windspeed": 2,
+      "_id": "bc90b288-0d6c-42e3-b809-46583f4453de",
+      "stationid": "89cad73b-c33a-4ae8-91d0-f0c8aff4b722"
+    },
+    {
+      "code": 500,
+      "temperature": 30,
+      "windspeed": 12,
+      "_id": "ef8edcf1-f304-4f59-b461-39d7d57c17e1",
+      "stationid": "40e81f75-d5e0-4f95-97b0-535604b8b855"
+    }
+  ]
+}
