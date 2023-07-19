@@ -28,6 +28,34 @@
       "windspeed": 2,
       "_id": "06d35301-b8db-4bc9-a2a5-851a5f495c66",
       "stationid": "89cad73b-c33a-4ae8-91d0-f0c8aff4b722"
+    },
+    {
+      "code": 100,
+      "temperature": 4,
+      "windspeed": 1,
+      "_id": "87d3c6dd-544f-45a9-925c-1f67a9784b89",
+      "stationid": "78af9d8f-034d-4613-a91a-31e3f5771f19"
+    },
+    {
+      "code": 400,
+      "temperature": 2,
+      "windspeed": 2,
+      "_id": "5a97e0f4-a803-4641-a9d7-489bdd0610c3",
+      "stationid": "99eaea9f-53a8-45f9-902c-1dd94ec115da"
+    },
+    {
+      "code": 200,
+      "temperature": 2,
+      "windspeed": 25,
+      "_id": "7a68b41d-f71f-4615-a4ab-8607f26689ca",
+      "stationid": "35ab46f2-05de-4c0c-8b92-903ce24ccacd"
+    },
+    {
+      "code": 500,
+      "temperature": 2,
+      "windspeed": 1,
+      "_id": "0ab83097-400d-49e4-9c5b-708f491fcd1d",
+      "stationid": "35ab46f2-05de-4c0c-8b92-903ce24ccacd"
     }
   ]
 }

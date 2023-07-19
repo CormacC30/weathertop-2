@@ -40,10 +40,11 @@ export const readingStore = {
     await db.write();
   },
 
-  async updateReading(reading, updatedReading) {
-    reading.title = updatedReading.title;
-    reading.artist = updatedReading.artist;
-    reading.duration = updatedReading.duration;
+  async updateReading(readingId, updatedReading) {
+    const reading = await this.getReadingById(readingId);
+    reading.code = updatedReading.code;
+    reading.temperature = updatedReading.temperature;
+    reading.windspeed = updatedReading.windspeed;
     await db.write();
   },
 };
