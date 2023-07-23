@@ -46,4 +46,5 @@ export const readingStore = {
     reading.duration = updatedReading.duration;
     await db.write();
   },
+
 };

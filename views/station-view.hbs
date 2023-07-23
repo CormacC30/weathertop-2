@@ -4,6 +4,34 @@
     <div class="title">
         {{station.title}}
     </div>
+
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Weather Code</th>
+      <th>Temperature (&degC)</th>
+      <th>Wind Speed (Bft)</th>
+      <th>Pressure (hPa)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        {{latestCode}}
+      </td>
+      <td>
+        {{latestTemperature}}
+      </td>
+      <td>
+        {{latestWindSpeed}}
+      </td>
+      <td>
+        {{latestPressure}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
     {{> list-readings}}
     {{> add-reading}}
 </section>
