@@ -1,12 +1,15 @@
 import { stationStore } from "../models/station-store.js";
+import { stationAnalytics } from "../utils/analytics.js";
 
 export const dashboardController = {
   async index(request, response) {
+    const stationList = await stationStore.getAllStations();
+
     const viewData = {
       title: "Station Dashboard",
-      stations: await stationStore.getAllStations(),
-      
+      stations: stationList,
     };
+
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
   },
@@ -15,7 +18,7 @@ export const dashboardController = {
     const newStation = {
       name: request.body.name,
     };
-    console.log(`adding station ${newStation.title}`);
+    console.log(`adding station ${newStation.name}`);
     await stationStore.addStation(newStation);
     response.redirect("/dashboard");
   },

@@ -1,12 +1,13 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
 
-import { stationAnalytics } from "../utils/analytics.js"
+import { stationAnalytics } from "../utils/analytics.js";
 
 export const stationController = {
     async index(request, response) {
         const station = await stationStore.getStationById(request.params.id);
         const latestReading = await stationAnalytics.getLatestReading(request.params.id);
+        const noReadings = stationAnalytics.noReadings(latestReading);
         const lastCode = latestReading.code;
         const lastTemp = latestReading.temperature;
         const lastWindSpeed = latestReading.windspeed;
@@ -18,6 +19,7 @@ export const stationController = {
             latestTemperature: lastTemp,
             latestWindSpeed: lastWindSpeed,
             latestPressure: lastPressure,
+            noReadings: noReadings,
         };
         response.render("station-view", viewData);
     },

@@ -2,8 +2,12 @@
   "file": "./models/stations",
   "stations": [
     {
-      "title": "test 2",
-      "_id": "b4febb51-7aa5-4b87-9121-9f107d5e40e5"
+      "name": "Cork",
+      "_id": "e3796c78-174e-4e4b-b5cd-1ef50106697d"
+    },
+    {
+      "name": "Test",
+      "_id": "90b0dee8-8432-445b-b5b0-b00d9ea4e9a2"
     }
   ]
 }

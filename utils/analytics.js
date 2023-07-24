@@ -1,5 +1,6 @@
 import { stationStore } from "../models/station-store.js"
 import { readingStore } from "../models/reading-store.js";
+import { request } from "express";
 
 export const stationAnalytics ={
 
@@ -7,29 +8,32 @@ async getLatestReading(stationId) {
     const readings = await readingStore.getReadingsByStationId(stationId);
     if (readings.length > 0) {
       return readings[readings.length - 1];
-
-      const {code, temperature, windspeed, pressure} = latestReading;
-      const data = { code, temperature, windspeed, pressure };
     }
     else {
-        return null;
+        return "No Readings available";
     };
   },
 
-async getLatestTemp(station){
-    return this.getLatestReading(station).temperature;
-},
+  noReadings(reading) {
+    if (reading !== "No Readings available") {
+        return false;
+    } else {
+        return true;
+    };
+  },
 
-async getLatestCode(station){
-    return this.getLatestReading(station).code;
-},
+  async displayLastReadingByStation(list) {
+    const latestReadings = await Promise.all(
+      list.map(async (station) => {
+        const latestReading = await this.getLatestReading(station._id);
+        return {
+          stationId: station._id,
+          latestReading,
+        };
+      })
+    );
 
-async getLatestWind(station){
-    return this.getLatestReading(station).windspeed;
-},
-
-async getLatestPressure(station){
-    return this.getLatestPressure(station).pressure;
-},
+    return latestReadings;
+  },
 
 };

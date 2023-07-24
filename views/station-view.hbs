@@ -2,9 +2,15 @@
 
 <section class="section">
     <div class="title">
-        {{station.title}}
+        {{station.name}}
     </div>
 
+{{#if noReadings}}
+<h3 class="title is-4 has-text-centered">No Readings available for {{station.name}}</h3>
+<p class="has-text-centered">Please enter details of new reading below</p>
+<br>
+{{else}}
+<h3 class="title is-4">Latest Reading for {{station.name}}:</h3>
 <table class="table is-fullwidth">
   <thead>
     <tr>
@@ -31,6 +37,7 @@
     </tr>
   </tbody>
 </table>
+{{/if}}
 
     {{> list-readings}}
     {{> add-reading}}
