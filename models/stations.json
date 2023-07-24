@@ -2,12 +2,19 @@
   "file": "./models/stations",
   "stations": [
     {
-      "name": "Cork",
-      "_id": "e3796c78-174e-4e4b-b5cd-1ef50106697d"
+      "name": "test 2",
+      "userid": "c278639e-169e-46d5-98c0-f5a9a99e59b4",
+      "_id": "0fa8b092-6923-4cce-abc4-40409c5a22df"
     },
     {
-      "title": "test 2",
-      "_id": "b4febb51-7aa5-4b87-9121-9f107d5e40e5"
+      "name": "Cork",
+      "userid": "8deaf23f-8ff0-47f5-81c3-004eebbca98a",
+      "_id": "7db72202-e66d-4aaa-a3f5-92057b10be7b"
+    },
+    {
+      "name": "Kilkenny",
+      "userid": "8deaf23f-8ff0-47f5-81c3-004eebbca98a",
+      "_id": "d92ea72b-887a-498f-a3c0-3b39bfc4b36d"
     }
   ]
 }
