@@ -10,14 +10,20 @@ export const stationController = {
         const noReadings = stationAnalytics.noReadings(latestReading);
         const lastCode = latestReading.code;
         const lastTemp = latestReading.temperature;
+        const lastFahrenheit = latestReading.fahrenheit;
         const lastWindSpeed = latestReading.windspeed;
+        const lastBeaufort = latestReading.beaufort;
+        const lastWindDirection = latestReading.winddirection;
         const lastPressure = latestReading.pressure;
         const viewData = {
             title: "Station",
             station: station,
             latestCode: lastCode,
             latestTemperature: lastTemp,
+            latestFahrenheit: lastFahrenheit,
             latestWindSpeed: lastWindSpeed,
+            latestBeaufort: lastBeaufort,
+            latestWindDirection: lastWindDirection,
             latestPressure: lastPressure,
             noReadings: noReadings,
         };
@@ -26,10 +32,14 @@ export const stationController = {
 
     async addReading(request, response) {
         const station = await stationStore.getStationById(request.params.id);
+        //const beaufort = await stationAnalytics.beaufort(request.body.beaufort);
         const newReading = {
             code: Number(request.body.code),
             temperature: Number(request.body.temperature),
+            fahrenheit: Number(stationAnalytics.celciusToFahrenheit(request.body.temperature)),
             windspeed: Number(request.body.windspeed),
+            beaufort: Number(stationAnalytics.beaufort(request.body.windspeed)),
+            winddirection: Number(request.body.winddirection),
             pressure: Number(request.body.pressure),
         }
         console.log(`adding reading Code: ${newReading.code} Temperature: ${newReading.temperature} Wind Speed: ${newReading.windspeed}`);

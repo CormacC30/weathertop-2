@@ -40,6 +40,56 @@
       "pressure": 1001,
       "_id": "56ab55c9-466a-4da2-84c7-05996cf6f57c",
       "stationid": "e3796c78-174e-4e4b-b5cd-1ef50106697d"
+    },
+    {
+      "code": 400,
+      "temperature": 12,
+      "windspeed": 33,
+      "winddirection": 90,
+      "pressure": 1005,
+      "_id": "b3bd5e3e-e054-4072-b2c9-4d053a30a91f",
+      "stationid": "e3796c78-174e-4e4b-b5cd-1ef50106697d"
+    },
+    {
+      "code": 100,
+      "temperature": 1,
+      "windspeed": 89,
+      "beaufort": {},
+      "winddirection": 171,
+      "pressure": 1001,
+      "_id": "2fd35fb5-ace0-4efa-96e2-815f33bb6545",
+      "stationid": "90b0dee8-8432-445b-b5b0-b00d9ea4e9a2"
+    },
+    {
+      "code": 100,
+      "temperature": 2,
+      "windspeed": 0.4,
+      "beaufort": null,
+      "winddirection": 90,
+      "pressure": 1580,
+      "_id": "278bf1f4-d82f-44de-9eda-c9b2c15d2fc0",
+      "stationid": "90b0dee8-8432-445b-b5b0-b00d9ea4e9a2"
+    },
+    {
+      "code": 800,
+      "temperature": 2,
+      "windspeed": 25,
+      "beaufort": 4,
+      "winddirection": 345,
+      "pressure": 1663,
+      "_id": "3598080d-fd6c-4b34-a9aa-bd7b94509471",
+      "stationid": "e3796c78-174e-4e4b-b5cd-1ef50106697d"
+    },
+    {
+      "code": 900,
+      "temperature": 18,
+      "fahrenheit": 64.4,
+      "windspeed": 65,
+      "beaufort": 8,
+      "winddirection": 122,
+      "pressure": 999,
+      "_id": "5bd92729-d78c-46b8-8743-5388b85d4276",
+      "stationid": "e3796c78-174e-4e4b-b5cd-1ef50106697d"
     }
   ]
 }

@@ -18,6 +18,7 @@ async getLatestReading(stationId) {
     return reading === "No Readings available";
   },
 
+  //intended for dashboard view
   async displayLastReadingByStation(list) {
     const latestReadings = await Promise.all(
       list.map(async (station) => {
@@ -31,5 +32,49 @@ async getLatestReading(stationId) {
 
     return latestReadings;
   },
+
+celciusToFahrenheit(temperature) {
+    return ((temperature * 9 / 5) + 32);
+},
+
+beaufort(windspeed){
+    if (windspeed >= 0.0 && windspeed < 1.0) {
+        return 0;
+      }
+      if (windspeed >= 1.0 && windspeed < 6.0) {
+        return 1;
+      }
+      if (windspeed >= 6.0 && windspeed < 12.0) {
+        return 2;
+      }
+      if (windspeed >= 12.0 && windspeed < 20.0) {
+        return 3;
+      }
+      if (windspeed >= 20.0 && windspeed < 29.0) {
+        return 4;
+      }
+      if (windspeed >= 29.0 && windspeed < 39.0) {
+        return 5;
+      }
+      if (windspeed >= 39.0 && windspeed < 50.0) {
+        return 6;
+      }
+      if (windspeed >= 50.0 && windspeed < 62.0) {
+        return 7;
+      }
+      if (windspeed >= 62.0 && windspeed < 75.0) {
+        return 8;
+      }
+      if (windspeed >= 75.0 && windspeed < 89.0) {
+        return 9;
+      }
+      if (windspeed >= 89.0 && windspeed < 103.0) {
+        return 10;
+      }
+      if (windspeed >= 103.0 && windspeed <= 117) {
+        return 11;
+      }
+      return 0;
+},
 
 };

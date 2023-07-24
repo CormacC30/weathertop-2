@@ -16,7 +16,10 @@
     <tr>
       <th>Weather Code</th>
       <th>Temperature (&degC)</th>
-      <th>Wind Speed (Bft)</th>
+      <th>(&degF)</th>
+      <th>Wind Speed (km/h)</th>
+      <th>Bft</th>
+      <th>Wind Direction (&deg N)</th>
       <th>Pressure (hPa)</th>
     </tr>
   </thead>
@@ -29,7 +32,16 @@
         {{latestTemperature}}
       </td>
       <td>
+        {{latestFahrenheit}}
+      </td>
+      <td>
         {{latestWindSpeed}}
+      </td>
+      <td>
+        {{latestBeaufort}}
+      </td>
+      <td>
+        {{latestWindDirection}}
       </td>
       <td>
         {{latestPressure}}
