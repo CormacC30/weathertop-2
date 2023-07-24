@@ -15,11 +15,7 @@ async getLatestReading(stationId) {
   },
 
   noReadings(reading) {
-    if (reading !== "No Readings available") {
-        return false;
-    } else {
-        return true;
-    };
+    return reading === "No Readings available";
   },
 
   async displayLastReadingByStation(list) {
