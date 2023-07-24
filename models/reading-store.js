@@ -47,4 +47,5 @@ export const readingStore = {
     reading.windspeed = updatedReading.windspeed;
     await db.write();
   },
+
 };

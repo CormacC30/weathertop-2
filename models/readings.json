@@ -2,60 +2,40 @@
   "file": "./models/readings.json",
   "readings": [
     {
-      "code": 100,
-      "temperature": 11,
-      "windspeed": 25,
-      "_id": "9b1c1cfc-73a5-462a-98ec-c8e677178fa6",
-      "stationid": "89cad73b-c33a-4ae8-91d0-f0c8aff4b722"
-    },
-    {
       "code": 500,
-      "temperature": 42,
-      "windspeed": 0.4,
-      "_id": "7b030eed-e744-4d98-bdc3-fcc384edd938",
-      "stationid": "89cad73b-c33a-4ae8-91d0-f0c8aff4b722"
-    },
-    {
-      "code": 100,
-      "temperature": 3,
-      "windspeed": 44,
-      "_id": "a0dc9fc6-2720-4d26-9f72-d8388e35c8d7",
+      "temperature": 30,
+      "windspeed": 12,
+      "pressure": 1,
+      "_id": "520455a0-2706-403b-abdf-70d1f318b132",
       "stationid": "b4febb51-7aa5-4b87-9121-9f107d5e40e5"
     },
     {
       "code": 400,
       "temperature": 2,
       "windspeed": 2,
-      "_id": "06d35301-b8db-4bc9-a2a5-851a5f495c66",
-      "stationid": "89cad73b-c33a-4ae8-91d0-f0c8aff4b722"
-    },
-    {
-      "code": 100,
-      "temperature": 4,
-      "windspeed": 1,
-      "_id": "87d3c6dd-544f-45a9-925c-1f67a9784b89",
-      "stationid": "78af9d8f-034d-4613-a91a-31e3f5771f19"
-    },
-    {
-      "code": 400,
-      "temperature": 2,
-      "windspeed": 2,
-      "_id": "5a97e0f4-a803-4641-a9d7-489bdd0610c3",
-      "stationid": "99eaea9f-53a8-45f9-902c-1dd94ec115da"
+      "pressure": 2,
+      "_id": "993b5c93-3c69-4266-a01f-330f4abbc0d8",
+      "stationid": "b4febb51-7aa5-4b87-9121-9f107d5e40e5"
     },
     {
       "code": 200,
-      "temperature": 2,
+      "temperature": 30,
       "windspeed": 25,
-      "_id": "7a68b41d-f71f-4615-a4ab-8607f26689ca",
-      "stationid": "35ab46f2-05de-4c0c-8b92-903ce24ccacd"
+      "pressure": 1000,
+      "_id": "118beeea-c07c-49be-9d7e-0da010e5f840",
+      "stationid": "b4febb51-7aa5-4b87-9121-9f107d5e40e5"
     },
     {
-      "code": 500,
-      "temperature": 2,
-      "windspeed": 1,
-      "_id": "0ab83097-400d-49e4-9c5b-708f491fcd1d",
-      "stationid": "35ab46f2-05de-4c0c-8b92-903ce24ccacd"
+      "code": 400,
+      "temperature": 40,
+      "fahrenheit": 104,
+      "windchill": 47.64,
+      "windspeed": 120,
+      "beaufort": 0,
+      "winddirection": 45,
+      "pressure": 33,
+      "_id": "6dbffdbd-26bf-4618-be9d-e910fbad9690",
+      "stationid": "e3796c78-174e-4e4b-b5cd-1ef50106697d"
     }
   ]
 }

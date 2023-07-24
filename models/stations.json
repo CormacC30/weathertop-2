@@ -2,27 +2,12 @@
   "file": "./models/stations",
   "stations": [
     {
-      "title": "test",
-      "_id": "89cad73b-c33a-4ae8-91d0-f0c8aff4b722"
+      "name": "Cork",
+      "_id": "e3796c78-174e-4e4b-b5cd-1ef50106697d"
     },
     {
       "title": "test 2",
       "_id": "b4febb51-7aa5-4b87-9121-9f107d5e40e5"
-    },
-    {
-      "title": "Bantry",
-      "userid": "8deaf23f-8ff0-47f5-81c3-004eebbca98a",
-      "_id": "78af9d8f-034d-4613-a91a-31e3f5771f19"
-    },
-    {
-      "title": "Skibbereen",
-      "userid": "c278639e-169e-46d5-98c0-f5a9a99e59b4",
-      "_id": "99eaea9f-53a8-45f9-902c-1dd94ec115da"
-    },
-    {
-      "title": "Skibbereen",
-      "userid": "8deaf23f-8ff0-47f5-81c3-004eebbca98a",
-      "_id": "35ab46f2-05de-4c0c-8b92-903ce24ccacd"
     }
   ]
 }

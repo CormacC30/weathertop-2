@@ -2,8 +2,62 @@
 
 <section class="section">
     <div class="title">
-        {{station.title}}
+        {{station.name}}
     </div>
+
+{{#if noReadings}}
+<h3 class="title is-4 has-text-centered">No Readings available for {{station.name}}</h3>
+<p class="has-text-centered">Please enter details of new reading below</p>
+<br>
+{{else}}
+<h3 class="title is-4">Latest Reading for {{station.name}}:</h3>
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Weather Code</th>
+      <th>Temperature (&degC)</th>
+      <th>(&degF)</th>
+      <th>Feels Like (&degC)</th>
+      <th>Wind Speed (km/h)</th>
+      <th>Bft</th>
+      <th>Wind Direction (&deg N)</th>
+      <th>Pressure (hPa)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        {{latestCode}}
+      </td>
+      <td>
+        {{latestTemperature}}
+      </td>
+      <td>
+        {{latestFahrenheit}}
+      </td>
+      <td>
+        {{latestWindChill}}
+      </td>
+      <td>
+        {{latestWindSpeed}}
+      </td>
+      <td>
+        {{latestBeaufort}}
+      </td>
+      <td>
+        {{latestWindDirection}}
+      </td>
+      <td>
+        {{latestPressure}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="title is-4">All Readings:</h3>
     {{> list-readings}}
+{{/if}}
+
     {{> add-reading}}
+
 </section>

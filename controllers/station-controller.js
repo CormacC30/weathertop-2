@@ -1,12 +1,33 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
 
+import { stationAnalytics } from "../utils/analytics.js";
+
 export const stationController = {
     async index(request, response) {
         const station = await stationStore.getStationById(request.params.id);
+        const latestReading = await stationAnalytics.getLatestReading(request.params.id);
+        const noReadings = stationAnalytics.noReadings(latestReading);
+        const lastCode = latestReading.code;
+        const lastTemp = latestReading.temperature;
+        const lastFahrenheit = latestReading.fahrenheit;
+        const lastWindChill = latestReading.windchill
+        const lastWindSpeed = latestReading.windspeed;
+        const lastBeaufort = latestReading.beaufort;
+        const lastWindDirection = latestReading.winddirection;
+        const lastPressure = latestReading.pressure;
         const viewData = {
             title: "Station",
             station: station,
+            latestCode: lastCode,
+            latestTemperature: lastTemp,
+            latestFahrenheit: lastFahrenheit,
+            latestWindChill: lastWindChill,
+            latestWindSpeed: lastWindSpeed,
+            latestBeaufort: lastBeaufort,
+            latestWindDirection: lastWindDirection,
+            latestPressure: lastPressure,
+            noReadings: noReadings,
         };
         response.render("station-view", viewData);
     },
@@ -16,7 +37,12 @@ export const stationController = {
         const newReading = {
             code: Number(request.body.code),
             temperature: Number(request.body.temperature),
+            fahrenheit: Number(stationAnalytics.celciusToFahrenheit(request.body.temperature)),
+            windchill: Number(stationAnalytics.windChill(request.body.temperature, request.body.windspeed)),
             windspeed: Number(request.body.windspeed),
+            beaufort: Number(stationAnalytics.beaufort(request.body.windspeed)),
+            winddirection: Number(request.body.winddirection),
+            pressure: Number(request.body.pressure),
         }
         console.log(`adding reading Code: ${newReading.code} Temperature: ${newReading.temperature} Wind Speed: ${newReading.windspeed}`);
         await readingStore.addReading(station._id, newReading);

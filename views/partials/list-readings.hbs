@@ -2,8 +2,13 @@
   <thead>
     <tr>
       <th>Weather Code</th>
-      <th>Temperature</th>
-      <th>Wind Speed</th>
+      <th>Temperature (&degC)</th>
+      <th>(&degF)</th>
+      <th>Feels Like (&degC)</th>
+      <th>Wind Speed (km/h)</th>
+      <th>(Bft)</th>
+      <th>Wind Direction (&degN)</th>
+      <th>Pressure (hPa)</th>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +21,22 @@
         {{temperature}}
       </td>
       <td>
+        {{fahrenheit}}
+      </td>
+      <td>
+        {{windchill}}
+      </td>
+      <td>
         {{windspeed}}
+      </td>
+      <td>
+        {{beaufort}}
+      </td>
+      <td>
+        {{winddirection}}
+      </td>
+      <td>
+        {{pressure}}
       </td>
       <td>
         <a href="/station/{{../station._id}}/deletereading/{{_id}}" class="button">
