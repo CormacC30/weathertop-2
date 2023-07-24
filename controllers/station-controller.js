@@ -11,6 +11,7 @@ export const stationController = {
         const lastCode = latestReading.code;
         const lastTemp = latestReading.temperature;
         const lastFahrenheit = latestReading.fahrenheit;
+        const lastWindChill = latestReading.windchill
         const lastWindSpeed = latestReading.windspeed;
         const lastBeaufort = latestReading.beaufort;
         const lastWindDirection = latestReading.winddirection;
@@ -21,6 +22,7 @@ export const stationController = {
             latestCode: lastCode,
             latestTemperature: lastTemp,
             latestFahrenheit: lastFahrenheit,
+            latestWindChill: lastWindChill,
             latestWindSpeed: lastWindSpeed,
             latestBeaufort: lastBeaufort,
             latestWindDirection: lastWindDirection,
@@ -32,11 +34,11 @@ export const stationController = {
 
     async addReading(request, response) {
         const station = await stationStore.getStationById(request.params.id);
-        //const beaufort = await stationAnalytics.beaufort(request.body.beaufort);
         const newReading = {
             code: Number(request.body.code),
             temperature: Number(request.body.temperature),
             fahrenheit: Number(stationAnalytics.celciusToFahrenheit(request.body.temperature)),
+            windchill: Number(stationAnalytics.windChill(request.body.temperature, request.body.windspeed)),
             windspeed: Number(request.body.windspeed),
             beaufort: Number(stationAnalytics.beaufort(request.body.windspeed)),
             winddirection: Number(request.body.winddirection),

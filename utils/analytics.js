@@ -77,4 +77,9 @@ beaufort(windspeed){
       return 0;
 },
 
+windChill(temperature, windspeed) {
+    let num = (13.12 + temperature * 0.6215 - 11.37 * Math.pow(windspeed, 0.16) + 0.3965 * temperature * Math.pow(windspeed, 0.16));
+    return num.toFixed(2);
+},
+
 };
