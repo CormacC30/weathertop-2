@@ -33,16 +33,16 @@
         {{latestTemperature}}
       </td>
       <td>
-        {{latestFahrenheit}}
+        {{celciusToFahrenheit latestTemperature}}
       </td>
       <td>
-        {{latestWindChill}}
+        {{windChill latestTemperature latestWindSpeed}}
       </td>
       <td>
         {{latestWindSpeed}}
       </td>
       <td>
-        {{latestBeaufort}}
+        {{beaufort latestWindSpeed}}
       </td>
       <td>
         {{latestWindDirection}}

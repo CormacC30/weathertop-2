@@ -21,10 +21,7 @@ export const stationController = {
             station: station,
             latestCode: lastCode,
             latestTemperature: lastTemp,
-            latestFahrenheit: lastFahrenheit,
-            latestWindChill: lastWindChill,
             latestWindSpeed: lastWindSpeed,
-            latestBeaufort: lastBeaufort,
             latestWindDirection: lastWindDirection,
             latestPressure: lastPressure,
             noReadings: noReadings,
@@ -37,10 +34,7 @@ export const stationController = {
         const newReading = {
             code: Number(request.body.code),
             temperature: Number(request.body.temperature),
-            fahrenheit: Number(stationAnalytics.celciusToFahrenheit(request.body.temperature)),
-            windchill: Number(stationAnalytics.windChill(request.body.temperature, request.body.windspeed)),
             windspeed: Number(request.body.windspeed),
-            beaufort: Number(stationAnalytics.beaufort(request.body.windspeed)),
             winddirection: Number(request.body.winddirection),
             pressure: Number(request.body.pressure),
         }

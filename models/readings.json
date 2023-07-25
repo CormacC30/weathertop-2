@@ -39,10 +39,10 @@
     },
     {
       "code": 500,
-      "temperature": 51,
+      "temperature": 13,
       "fahrenheit": 129.2,
       "windchill": 57.9,
-      "windspeed": 21,
+      "windspeed": 28,
       "beaufort": 1,
       "winddirection": 122,
       "pressure": 1000,
@@ -60,6 +60,24 @@
       "pressure": 990,
       "_id": "7736fb07-e3e4-48b4-a51a-a327ef329233",
       "stationid": "d92ea72b-887a-498f-a3c0-3b39bfc4b36d"
+    },
+    {
+      "code": 300,
+      "temperature": 1,
+      "windspeed": 90,
+      "winddirection": 90,
+      "pressure": 1001,
+      "_id": "10e9b059-773d-42d7-807c-117808c2b332",
+      "stationid": "5743018a-49d2-4ebb-8692-24520d4a777f"
+    },
+    {
+      "code": 200,
+      "temperature": 36,
+      "windspeed": 14,
+      "winddirection": 100,
+      "pressure": 999,
+      "_id": "8b87fd12-ac5a-458f-851f-4a88186784bf",
+      "stationid": "5743018a-49d2-4ebb-8692-24520d4a777f"
     }
   ]
 }
