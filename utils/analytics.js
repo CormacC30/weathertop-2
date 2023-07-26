@@ -149,6 +149,29 @@ celciusToIcon(temperature) {
       return "fa-solid fa-temperature-half";
 },
 
+codeToText(code) {
+    switch (code) {
+        case 100:
+          return "Clear";
+        case 200:
+          return "Partial Clouds";
+        case 300:
+          return "Cloudy";
+        case 400:
+          return "Light Showers";
+        case 500:
+          return "Heavy Showers";
+        case 600:
+          return "Rain";
+        case 700:
+          return "Snow";
+        case 800:
+          return "Thunder";
+        default:
+          return "Sunny";
+      };
+},
+
 };
 
 const weatherIcons = {  

@@ -15,9 +15,11 @@
     {{#each station.readings}}
     <tr>
       <td>
-        {{code}}
-        <br>
         <p class="icon"><i class="{{weatherIcon code}}"></i></p>
+        <br>
+        <p>{{codeToText code}}</p>
+        <br>
+        {{code}}
       </td>
       <td>
         <p class="icon is-large"><span class="fa-lg"><i class="{{celciusToIcon temperature}}"></i></span></p>

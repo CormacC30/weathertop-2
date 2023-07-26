@@ -96,6 +96,15 @@
       "pressure": 1010,
       "_id": "4518edb5-e638-4f90-b26b-15123b3ca5ff",
       "stationid": "d2693d66-650c-426f-b14c-1b96da531892"
+    },
+    {
+      "code": 800,
+      "temperature": 14,
+      "windspeed": 88,
+      "winddirection": 200,
+      "pressure": 1000,
+      "_id": "431d405b-80ca-487e-968c-299eb82b2365",
+      "stationid": "d2693d66-650c-426f-b14c-1b96da531892"
     }
   ]
 }

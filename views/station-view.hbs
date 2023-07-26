@@ -27,9 +27,11 @@
   <tbody>
     <tr>
       <td>
-        {{latestCode}}
-        <br>
         <p class="icon"><i class="{{weatherIcon latestCode}}"></i></p>
+        <br>
+        <p>{{codeToText latestCode}}</p>
+        <br>
+        {{latestCode}}
       </td>
       <td>
         <p class="icon is-large"><span class="fa-lg"><i class="{{celciusToIcon temperature}}"></i></span></p>

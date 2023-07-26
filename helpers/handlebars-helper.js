@@ -7,4 +7,5 @@ export const handlebarsHelpers = {
     degreesToCompass: stationAnalytics.degreesToCompass,
     weatherIcon: stationAnalytics.weatherIcon,
     celciusToIcon: stationAnalytics.celciusToIcon,
+    codeToText: stationAnalytics.codeToText,
   };
