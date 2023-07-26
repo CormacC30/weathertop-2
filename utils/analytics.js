@@ -120,4 +120,20 @@ degreesToCompass(winddirection) {
       }
 },
 
+weatherIcon(code) {
+    return weatherIcons[code];
+},
+
+};
+
+const weatherIcons = {  
+    0: "fa-solid fa-sun",
+    100: "fa-solid fa-sun",
+    200: "fa-solid fa-cloud-sun",
+    300: "fa-solid fa-cloud",
+    400: "fa-solid fa-cloud-rain",
+    500: "fa-solid fa-cloud-showers-heavy",
+    600: "fa-solid fa-umbrella",
+    700: "fa-solid fa-snowflake",
+    800: "fa-solid fa-cloud-bolt"
 };
