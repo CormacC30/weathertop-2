@@ -124,6 +124,31 @@ weatherIcon(code) {
     return weatherIcons[code];
 },
 
+celciusToIcon(temperature) {
+    if (temperature <= 5) {
+        return "fa-solid fa-temperature-empty";
+      }
+      else if (temperature > 5 && temperature <= 10) {
+        return "fa-solid fa-temperature-low";
+      }
+      else if (temperature > 10 && temperature <= 15) {
+        return "fa-solid fa-temperature-quarter";
+      }
+      else if (temperature > 15 && temperature <= 20) {
+        return "fa-solid fa-temperature-half";
+      }
+      else if (temperature > 20 && temperature <= 25) {
+        return "fa-solid fa-temperature-three-quarters";
+      }
+      else if (temperature > 25 && temperature <= 27.5) {
+        return "fa-solid fa-temperature-full";
+      }
+      else if (temperature > 27.5) {
+        return "fa-solid fa-temperature-high";
+      }
+      return "fa-solid fa-temperature-half";
+},
+
 };
 
 const weatherIcons = {  

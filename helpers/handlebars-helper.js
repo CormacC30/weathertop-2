@@ -6,4 +6,5 @@ export const handlebarsHelpers = {
     beaufort: stationAnalytics.beaufort,
     degreesToCompass: stationAnalytics.degreesToCompass,
     weatherIcon: stationAnalytics.weatherIcon,
+    celciusToIcon: stationAnalytics.celciusToIcon,
   };
