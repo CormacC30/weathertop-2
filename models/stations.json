@@ -10,6 +10,13 @@
       "name": "Skibbereen",
       "userid": "0fe62c2c-9477-4289-bd98-5456165ce127",
       "_id": "5743018a-49d2-4ebb-8692-24520d4a777f"
+    },
+    {
+      "name": "test",
+      "latitude": 54.354,
+      "longitude": 12.364,
+      "userid": "8deaf23f-8ff0-47f5-81c3-004eebbca98a",
+      "_id": "d2693d66-650c-426f-b14c-1b96da531892"
     }
   ]
 }

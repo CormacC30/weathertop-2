@@ -1,9 +1,14 @@
 {{#each stations}}
 <div class="box box-link-hover-shadow">
   <h2 class="title">
-    {{name}}
+    Station Name: {{name}}
   </h2>
-
+  <h2 class="title">
+    Latitude: {{latitude}} (&degN)
+  </h2>
+    <h2 class="title">
+    Longitude: {{longitude}} (&degW)
+  </h2>
   <a href="/station/{{_id}}" class="button">
   {{>icons/open}}
   </a>
