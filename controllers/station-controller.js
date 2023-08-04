@@ -16,6 +16,7 @@ export const stationController = {
         const viewData = {
             title: "Station",
             station: station,
+            id: station._id,
             latestCode: lastCode,
             latestTemperature: lastTemp,
             latestWindSpeed: lastWindSpeed,

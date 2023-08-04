@@ -1,20 +1,30 @@
 import { stationStore } from "../models/station-store.js";
 import { stationAnalytics } from "../utils/analytics.js";
 import { accountsController } from "./accounts-controller.js";
+import { weatherReport } from "../models/weather-report.js";
 
 export const dashboardController = {
 
-  async index(request, response) {
-    const stationList = await stationStore.getAllStations();
+  async index(request, response) {  
 
     const loggedInUser = await accountsController.getLoggedInUser(request);
+    const stations = await stationStore.getStationsByUserId(loggedInUser._id);
+    
+    for(const station of stations){
+      const latestReading = await stationAnalytics.getLatestReading(station._id);
+      station.latestReading = latestReading;
+    };
+
     const viewData = {
       title: "Station Dashboard",
-      stations: await stationStore.getStationsByUserId(loggedInUser._id),
+      stations: stations,
+      
+      
     };
 
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
+
   },
 
   async addStation(request, response) {

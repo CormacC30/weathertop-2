@@ -1,0 +1,56 @@
+{{#if noReadings}}
+<h3 class="title is-4 has-text-centered">No Readings available for {{name}}</h3>
+<p class="has-text-centered">Please enter details of new reading below</p>
+<br>
+{{else}}
+
+<table class="table is-fullwidth">
+<thead>
+    <tr>
+      <th>Weather Code</th>
+      <th>Temperature (&degC)</th>
+      <th>(&degF)</th>
+      <th>Feels Like (&degC)</th>
+      <th>Wind Speed (km/h)</th>
+      <th>Bft</th>
+      <th>Wind Direction (&deg)</th>
+      <th>Pressure (hPa)</th>
+    </tr>
+</thead>
+<tbody>
+    <td>
+        <p class="icon"><i class="{{weatherIcon latestReading.code}}"></i></p>
+        <br>
+        <p>{{codeToText latestReading.code}}</p>
+        <br>
+        {{latestReading.code}}
+      </td>
+      <td>
+        <p class="icon is-large"><span class="fa-lg"><i class="{{celciusToIcon latestReading.temperature}}"></i></span></p>
+        <br>
+        {{latestReading.temperature}}
+      </td>
+      <td>
+        {{celciusToFahrenheit latestReading.temperature}}
+      </td>
+      <td>
+        {{windChill latestReading.temperature latestReading.windspeed}}
+      </td>
+      <td>
+        {{latestReading.windspeed}}
+      </td>
+      <td>
+        {{beaufort latestReading.windspeed}}
+      </td>
+      <td>
+        {{latestReading.winddirection}}
+        <br>
+        {{degreesToCompass latestReading.winddirection}}
+      </td>
+      <td>
+        {{latestReading.pressure}}
+      </td>
+</tbody>
+</table>
+
+{{/if}}

@@ -17,6 +17,13 @@
       "longitude": 12.364,
       "userid": "8deaf23f-8ff0-47f5-81c3-004eebbca98a",
       "_id": "d2693d66-650c-426f-b14c-1b96da531892"
+    },
+    {
+      "name": "Cork",
+      "latitude": 54.354,
+      "longitude": 12,
+      "userid": "8deaf23f-8ff0-47f5-81c3-004eebbca98a",
+      "_id": "0cfbeda2-12d7-4111-8fb6-c9b89b8284cd"
     }
   ]
 }

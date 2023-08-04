@@ -172,6 +172,14 @@ codeToText(code) {
       };
 },
 
+getIdFromList(list){
+    let id= list[0];
+    for(let i = 0; i < list.length; i++) {
+        id = list[i]._id
+    };
+    return id;
+}
+
 };
 
 const weatherIcons = {  
