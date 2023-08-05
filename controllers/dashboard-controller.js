@@ -13,13 +13,14 @@ export const dashboardController = {
     for(const station of stations){
       const latestReading = await stationAnalytics.getLatestReading(station._id);
       station.latestReading = latestReading;
+      const noReadings = stationAnalytics.noReadings(latestReading);
+      station.noReadings = noReadings;
     };
+    
 
     const viewData = {
       title: "Station Dashboard",
       stations: stations,
-      
-      
     };
 
     console.log("dashboard rendering");
