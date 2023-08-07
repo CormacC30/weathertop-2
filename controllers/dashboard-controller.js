@@ -2,7 +2,6 @@ import { stationStore } from "../models/station-store.js";
 import { stationAnalytics } from "../utils/analytics.js";
 import { accountsController } from "./accounts-controller.js";
 import { maxMin } from "../utils/max-min.js";
-import { weatherReport } from "../models/weather-report.js";
 
 export const dashboardController = {
 

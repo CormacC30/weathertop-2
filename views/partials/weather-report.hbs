@@ -8,10 +8,9 @@
     <tr>
       <th>Weather Code</th>
       <th>Temperature (&degC)</th>
-      <th>(&degF)</th>
       <th>Feels Like (&degC)</th>
       <th>Wind Speed (km/h)</th>
-      <th>Bft</th>
+
       <th>Wind Direction (&deg)</th>
       <th>Pressure (hPa)</th>
     </tr>
@@ -27,24 +26,19 @@
       <td>
         <p class="icon is-large"><span class="fa-lg"><i class="{{celciusToIcon latestReading.temperature}}"></i></span></p>
         <br>
-        Current: {{latestReading.temperature}} &degC<br>
-        Max: {{maxTemp}} &degC /
-        Min: {{minTemp}} &degC
+        Current: {{latestReading.temperature}} &degC / {{celciusToFahrenheit latestReading.temperature}} &degF<br>
+        Max: {{maxTemp}} &degC / {{celciusToFahrenheit maxTemp}} &degF<br>
+        Min: {{minTemp}} &degC / {{celciusToFahrenheit minTemp}} &degF
       </td>
       <td>
-        {{celciusToFahrenheit latestReading.temperature}}
+        {{windChill latestReading.temperature latestReading.windspeed}} &degC
       </td>
       <td>
-        {{windChill latestReading.temperature latestReading.windspeed}}
+        Current: {{latestReading.windspeed}} km/h / {{beaufort latestReading.windspeed}} Bft<br>
+        Max: {{maxWind}} km/h / {{beaufort maxWind}} Bft<br>
+        Min: {{minWind}} km/h / {{beaufort minWind}} Bft
       </td>
-      <td>
-        Current: {{latestReading.windspeed}}<br>
-        Max: {{maxWind}} /
-        Min: {{minWind}}
-      </td>
-      <td>
-        {{beaufort latestReading.windspeed}}
-      </td>
+
       <td>
         {{latestReading.winddirection}}
         <br>
