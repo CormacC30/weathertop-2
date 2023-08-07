@@ -22,6 +22,8 @@ export const dashboardController = {
       station.maxWind = await maxMin.maxValue(station, `windspeed`);
       station.minWind = await maxMin.minValue(station, `windspeed`);
     };
+//sort the stations in alphabetical order
+    stations.sort((a, b) => a.name.localeCompare(b.name));
 
     const viewData = {
       title: "Station Dashboard",

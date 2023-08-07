@@ -9,6 +9,4 @@ export const handlebarsHelpers = {
     weatherIcon: stationAnalytics.weatherIcon,
     celciusToIcon: stationAnalytics.celciusToIcon,
     codeToText: stationAnalytics.codeToText,
-    maxTemp: maxMin.maxTemp,
-    minTemp: maxMin.minTemp,
   };
