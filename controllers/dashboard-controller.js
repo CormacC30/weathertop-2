@@ -1,6 +1,7 @@
 import { stationStore } from "../models/station-store.js";
 import { stationAnalytics } from "../utils/analytics.js";
 import { accountsController } from "./accounts-controller.js";
+import { maxMin } from "../utils/max-min.js";
 import { weatherReport } from "../models/weather-report.js";
 
 export const dashboardController = {
@@ -15,6 +16,12 @@ export const dashboardController = {
       station.latestReading = latestReading;
       const noReadings = stationAnalytics.noReadings(latestReading);
       station.noReadings = noReadings;
+      station.maxTemp = await maxMin.maxValue(station, `temperature`);
+      station.minTemp = await maxMin.minValue(station, `temperature`);
+      station.maxPressure = await maxMin.maxValue(station, `pressure`);
+      station.minPressure = await maxMin.minValue(station, `pressure`);
+      station.maxWind = await maxMin.maxValue(station, `windspeed`);
+      station.minWind = await maxMin.minValue(station, `windspeed`);
     };
 
     const viewData = {

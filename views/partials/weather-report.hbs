@@ -27,7 +27,9 @@
       <td>
         <p class="icon is-large"><span class="fa-lg"><i class="{{celciusToIcon latestReading.temperature}}"></i></span></p>
         <br>
-        {{latestReading.temperature}}
+        Current: {{latestReading.temperature}} &degC<br>
+        Max: {{maxTemp}} &degC /
+        Min: {{minTemp}} &degC
       </td>
       <td>
         {{celciusToFahrenheit latestReading.temperature}}
@@ -36,7 +38,9 @@
         {{windChill latestReading.temperature latestReading.windspeed}}
       </td>
       <td>
-        {{latestReading.windspeed}}
+        Current: {{latestReading.windspeed}}<br>
+        Max: {{maxWind}} /
+        Min: {{minWind}}
       </td>
       <td>
         {{beaufort latestReading.windspeed}}
@@ -47,7 +51,9 @@
         {{degreesToCompass latestReading.winddirection}}
       </td>
       <td>
-        {{latestReading.pressure}}
+        Current: {{latestReading.pressure}}<br>
+        Max: {{maxPressure}} /
+        Min: {{minPressure}}
       </td>
 </tbody>
 </table>
