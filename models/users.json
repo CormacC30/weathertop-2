@@ -7,6 +7,13 @@
       "email": "homer@simpson.com",
       "password": "secret",
       "_id": "68a7a27b-ec13-4514-b1ba-69d06a5864e5"
+    },
+    {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "_id": "51dc75e2-f0ca-4170-824d-c0e1f7f6bd45"
     }
   ]
 }
