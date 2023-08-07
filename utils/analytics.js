@@ -18,20 +18,6 @@ async getLatestReading(stationId) {
     return reading === "No Readings available";
   },
 
-  //intended for dashboard view
-  async displayLastReadingByStation(list) {
-    const latestReadings = await Promise.all(
-      list.map(async (station) => {
-        const latestReading = await this.getLatestReading(station._id);
-        return {
-          stationId: station._id,
-          latestReading,
-        };
-      })
-    );
-
-    return latestReadings;
-  },
 
 celciusToFahrenheit(temperature) {
     return ((temperature * 9 / 5) + 32);

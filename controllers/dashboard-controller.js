@@ -16,7 +16,6 @@ export const dashboardController = {
       const noReadings = stationAnalytics.noReadings(latestReading);
       station.noReadings = noReadings;
     };
-    
 
     const viewData = {
       title: "Station Dashboard",
