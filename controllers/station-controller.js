@@ -40,13 +40,25 @@ export const stationController = {
     },
 
     async addReading(request, response) {
-        const station = await stationStore.getStationById(request.params.id);
+        const station = await stationStore.getStationById(request.params.id);        
+        const currentDateTime = new Date();
+        const formatter = new Intl.DateTimeFormat('nl-BE',{
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            hour12: false,
+        });
+        const dateTime = formatter.format(currentDateTime);
         const newReading = {
             code: Number(request.body.code),
             temperature: Number(request.body.temperature),
             windspeed: Number(request.body.windspeed),
             winddirection: Number(request.body.winddirection),
             pressure: Number(request.body.pressure),
+            dateTime: dateTime,
         }
         console.log(`adding reading Code: ${newReading.code} Temperature: ${newReading.temperature} Wind Speed: ${newReading.windspeed}`);
         await readingStore.addReading(station._id, newReading);

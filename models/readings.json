@@ -45,6 +45,16 @@
       "pressure": 1000,
       "_id": "ff3b282e-3d42-4471-8889-be465ab0def0",
       "stationid": "91d2e26d-77ae-4e18-8277-adec496701c1"
+    },
+    {
+      "code": 500,
+      "temperature": 1,
+      "windspeed": 25,
+      "winddirection": 90,
+      "pressure": 999,
+      "dateTime": "9/8/2023 12:57:27",
+      "_id": "68045f60-f857-46d5-b92c-23b2a1d5979e",
+      "stationid": "140d5673-295b-4354-ad70-512099cd2510"
     }
   ]
 }

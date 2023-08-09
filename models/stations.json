@@ -14,6 +14,13 @@
       "longitude": 4.125,
       "userid": "68a7a27b-ec13-4514-b1ba-69d06a5864e5",
       "_id": "91d2e26d-77ae-4e18-8277-adec496701c1"
+    },
+    {
+      "name": "test",
+      "latitude": 54.354,
+      "longitude": 7.02,
+      "userid": "51dc75e2-f0ca-4170-824d-c0e1f7f6bd45",
+      "_id": "140d5673-295b-4354-ad70-512099cd2510"
     }
   ]
 }
