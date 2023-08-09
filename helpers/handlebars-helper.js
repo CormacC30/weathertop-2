@@ -9,4 +9,5 @@ export const handlebarsHelpers = {
     weatherIcon: stationAnalytics.weatherIcon,
     celciusToIcon: stationAnalytics.celciusToIcon,
     codeToText: stationAnalytics.codeToText,
+    dateFormatter: stationAnalytics.formatDateTime,
   };

@@ -164,7 +164,11 @@ getIdFromList(list){
         id = list[i]._id
     };
     return id;
-}
+},
+
+formatDateTime(dateTime){
+return dateFormatter.format(dateTime);
+},
 
 };
 
@@ -179,3 +183,13 @@ const weatherIcons = {
     700: "fa-solid fa-snowflake",
     800: "fa-solid fa-cloud-bolt"
 };
+
+const dateFormatter = new Intl.DateTimeFormat('nl-BE',{
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: false,
+});

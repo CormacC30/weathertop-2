@@ -42,16 +42,8 @@ export const stationController = {
     async addReading(request, response) {
         const station = await stationStore.getStationById(request.params.id);        
         const currentDateTime = new Date();
-        const formatter = new Intl.DateTimeFormat('nl-BE',{
-            year: 'numeric',
-            month: 'numeric',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric',
-            second: 'numeric',
-            hour12: false,
-        });
-        const dateTime = formatter.format(currentDateTime);
+
+        const dateTime = stationAnalytics.formatDateTime(currentDateTime);
         const newReading = {
             code: Number(request.body.code),
             temperature: Number(request.body.temperature),

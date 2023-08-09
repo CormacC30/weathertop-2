@@ -7,7 +7,7 @@
       "windspeed": 3.5,
       "winddirection": 90,
       "pressure": 1002,
-      "dateTime":  "2021-04-25T07:20:42.138Z",
+      "dateTime": "25/04/2021 07:20:42",
       "_id": "6999a8b9-620c-4198-8a69-db3a081d9623",
       "stationid": "aab9d250-79e0-4576-a7ea-4646ce462624"
     },
@@ -17,7 +17,7 @@
       "windspeed": 2,
       "winddirection": 96,
       "pressure": 1004,
-      "dateTime":  "2021-05-25T07:20:42.138Z",
+      "dateTime": "25/05/2021 07:20:42",
       "_id": "394ec3d1-2f0b-4b36-be10-ce3270febb1d",
       "stationid": "aab9d250-79e0-4576-a7ea-4646ce462624"
     },
@@ -27,7 +27,7 @@
       "windspeed": 1,
       "winddirection": 101,
       "pressure": 1005,
-      "dateTime":  "2021-06-25T07:20:42.138Z",
+      "dateTime": "25/06/2021 07:20:42",
       "_id": "fdeab619-2973-48c7-ad6a-3013007cfe90",
       "stationid": "aab9d250-79e0-4576-a7ea-4646ce462624"
     },
@@ -37,7 +37,7 @@
       "windspeed": 1,
       "winddirection": 98,
       "pressure": 999,
-      "dateTime": "2021-02-25T07:20:42.138Z",
+      "dateTime": "25/02/2021 07:20:42",
       "_id": "3fa6921c-40b1-41ec-9336-85fbf5843635",
       "stationid": "91d2e26d-77ae-4e18-8277-adec496701c1"
     },
@@ -47,7 +47,7 @@
       "windspeed": 3.5,
       "winddirection": 102,
       "pressure": 1000,
-      "dateTime": "2021-03-25T07:20:42.138Z",
+      "dateTime": "25/03/2021 07:20:42",
       "_id": "ff3b282e-3d42-4471-8889-be465ab0def0",
       "stationid": "91d2e26d-77ae-4e18-8277-adec496701c1"
     },
@@ -59,6 +59,26 @@
       "pressure": 999,
       "dateTime": "9/8/2023 12:57:27",
       "_id": "68045f60-f857-46d5-b92c-23b2a1d5979e",
+      "stationid": "140d5673-295b-4354-ad70-512099cd2510"
+    },
+    {
+      "code": 800,
+      "temperature": 8,
+      "windspeed": 14,
+      "winddirection": 99,
+      "pressure": 1000,
+      "dateTime": "9/8/2023 13:32:49",
+      "_id": "8142cf4b-4f7f-4e6b-bfdc-25efb2773536",
+      "stationid": "140d5673-295b-4354-ad70-512099cd2510"
+    },
+    {
+      "code": 100,
+      "temperature": 30,
+      "windspeed": 14,
+      "winddirection": 345,
+      "pressure": 1005,
+      "dateTime": "9/8/2023 13:42:17",
+      "_id": "37cd7c8d-a6f6-4ca2-adf9-109b7f909b2e",
       "stationid": "140d5673-295b-4354-ad70-512099cd2510"
     }
   ]
