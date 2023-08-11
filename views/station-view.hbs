@@ -36,11 +36,10 @@
       <td>
         <p class="icon is-large"><span class="fa-lg"><i class="{{celciusToIcon temperature}}"></i></span></p>
         <br>
-        Current: {{latestTemperature}} &degC
+        Current: {{latestTemperature}} &degC <div class="icon"><div class="fa-lg"><i class="{{tempTrend}}"></i></div></div>
         <br>
         Max: {{maxTemp}} &degC<br>
-        Min: {{minTemp}} &degC<br>
-        Trend: <div class="icon"><div class="fa-lg"><i class="{{tempTrend}}"></i></div></div>
+        Min: {{minTemp}} &degC<br> 
       </td>
       <td>
         {{celciusToFahrenheit latestTemperature}}
@@ -49,10 +48,10 @@
         {{windChill latestTemperature latestWindSpeed}}
       </td>
       <td>
-        Current: {{latestWindSpeed}}<br>
+        Current: {{latestWindSpeed}} <div class="icon"><div class="fa-lg"><i class="{{windTrend}}"></i></div></div>
+        <br>
         Max: {{maxWind}}<br>
         Min: {{minWind}}<br>
-        Trend: <div class="icon"><div class="fa-lg"><i class="{{windTrend}}"></i></div></div>
       </td>
       <td>
         {{beaufort latestWindSpeed}}
@@ -63,10 +62,10 @@
         {{degreesToCompass latestWindDirection}}
       </td>
       <td>
-        Current: {{latestPressure}}<br>
+        Current: {{latestPressure}} <div class="icon"><div class="fa-lg"><i class="{{pressureTrend}}"></i></div></div>
+        <br>
         Max: {{maxPressure}}<br>
         Min: {{minPressure}}<br>
-        Trend: <div class="icon"><div class="fa-lg"><i class="{{pressureTrend}}"></i></div></div>
       </td>
     </tr>
   </tbody>
