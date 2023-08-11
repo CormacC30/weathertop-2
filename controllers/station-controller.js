@@ -20,7 +20,9 @@ export const stationController = {
         const minPressure = await maxMin.minValue(station, `pressure`);
         const maxWind = await maxMin.maxValue(station, `windspeed`);
         const minWind = await maxMin.minValue(station, `windspeed`);
-        const tempTrend = await trends.trend(station, `temperature`)
+        const tempTrend = await trends.trend(station, `temperature`);
+        const windTrend = await trends.trend(station, `windspeed`);
+        const pressureTrend = await trends.trend(station, `pressure`);
         const viewData = {
             title: "Station",
             station: station,
@@ -36,7 +38,9 @@ export const stationController = {
             minPressure: minPressure,
             maxWind: maxWind,
             minWind: minWind,
-            tempTrend: tempTrend,
+            tempTrend: tempTrend, //placeholder for trend icons
+            windTrend: windTrend,
+            pressureTrend: pressureTrend,
             noReadings: noReadings,
         };
         response.render("station-view", viewData);
