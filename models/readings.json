@@ -80,6 +80,16 @@
       "dateTime": "9/8/2023 13:42:17",
       "_id": "37cd7c8d-a6f6-4ca2-adf9-109b7f909b2e",
       "stationid": "140d5673-295b-4354-ad70-512099cd2510"
+    },
+    {
+      "code": 700,
+      "temperature": 0,
+      "windspeed": 12,
+      "winddirection": 100,
+      "pressure": 1000,
+      "dateTime": "11/8/2023 12:05:17",
+      "_id": "5c599f08-eb64-4c04-9074-b2e580a60c4d",
+      "stationid": "91d2e26d-77ae-4e18-8277-adec496701c1"
     }
   ]
 }

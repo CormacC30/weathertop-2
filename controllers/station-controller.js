@@ -2,6 +2,7 @@ import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
 import { maxMin } from "../utils/max-min.js";
 import { stationAnalytics } from "../utils/analytics.js";
+import { trends } from "../utils/trends.js";
 
 export const stationController = {
     async index(request, response) {
@@ -19,6 +20,7 @@ export const stationController = {
         const minPressure = await maxMin.minValue(station, `pressure`);
         const maxWind = await maxMin.maxValue(station, `windspeed`);
         const minWind = await maxMin.minValue(station, `windspeed`);
+        const tempTrend = await trends.trend(station, `temperature`)
         const viewData = {
             title: "Station",
             station: station,
@@ -34,6 +36,7 @@ export const stationController = {
             minPressure: minPressure,
             maxWind: maxWind,
             minWind: minWind,
+            tempTrend: tempTrend,
             noReadings: noReadings,
         };
         response.render("station-view", viewData);

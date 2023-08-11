@@ -39,7 +39,8 @@
         Current: {{latestTemperature}} &degC
         <br>
         Max: {{maxTemp}} &degC<br>
-        Min: {{minTemp}} &degC
+        Min: {{minTemp}} &degC<br>
+        Trend: {{tempTrend}}
       </td>
       <td>
         {{celciusToFahrenheit latestTemperature}}
@@ -74,5 +75,4 @@
 {{/if}}
 
     {{> add-reading}}
-
 </section>
