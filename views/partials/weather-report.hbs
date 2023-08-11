@@ -27,7 +27,8 @@
         <br>
         Current: {{latestReading.temperature}} &degC / {{celciusToFahrenheit latestReading.temperature}} &degF<br>
         Max: {{maxTemp}} &degC / {{celciusToFahrenheit maxTemp}} &degF<br>
-        Min: {{minTemp}} &degC / {{celciusToFahrenheit minTemp}} &degF
+        Min: {{minTemp}} &degC / {{celciusToFahrenheit minTemp}} &degF<br>
+        Trend: <div class="icon"><div class="fa-lg"><i class="{{tempTrend}}"></i></div></div>
       </td>
       <td>
         {{windChill latestReading.temperature latestReading.windspeed}} &degC
@@ -35,7 +36,8 @@
       <td>
         Current: {{latestReading.windspeed}} km/h / {{beaufort latestReading.windspeed}} Bft<br>
         Max: {{maxWind}} km/h / {{beaufort maxWind}} Bft<br>
-        Min: {{minWind}} km/h / {{beaufort minWind}} Bft
+        Min: {{minWind}} km/h / {{beaufort minWind}} Bft<br>
+        Trend: <div class="icon"><div class="fa-lg"><i class="{{windTrend}}"></i></div></div>
       </td>
 
       <td>
@@ -46,7 +48,8 @@
       <td>
         Current: {{latestReading.pressure}}<br>
         Max: {{maxPressure}} /
-        Min: {{minPressure}}
+        Min: {{minPressure}}<br>
+        Trend: <div class="icon"><div class="fa-lg"><i class="{{pressureTrend}}"></i></div></div>
       </td>
 </tbody>
 </table>

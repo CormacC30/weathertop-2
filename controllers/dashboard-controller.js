@@ -2,6 +2,7 @@ import { stationStore } from "../models/station-store.js";
 import { stationAnalytics } from "../utils/analytics.js";
 import { accountsController } from "./accounts-controller.js";
 import { maxMin } from "../utils/max-min.js";
+import { trends } from "../utils/trends.js";
 
 export const dashboardController = {
 
@@ -21,6 +22,9 @@ export const dashboardController = {
       station.minPressure = await maxMin.minValue(station, `pressure`);
       station.maxWind = await maxMin.maxValue(station, `windspeed`);
       station.minWind = await maxMin.minValue(station, `windspeed`);
+      station.tempTrend = await trends.trend(station, `temperature`);
+      station.windTrend = await trends.trend(station, `windspeed`);
+      station.pressureTrend = await trends.trend(station, `pressure`);
     };
 //sort the stations in alphabetical order
     stations.sort((a, b) => a.name.localeCompare(b.name));
