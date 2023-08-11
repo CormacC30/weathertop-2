@@ -40,7 +40,7 @@
         <br>
         Max: {{maxTemp}} &degC<br>
         Min: {{minTemp}} &degC<br>
-        Trend: {{tempTrend}}
+        Trend: <div class="icon"><div class="fa-lg"><i class="{{tempTrend}}"></i></div></div>
       </td>
       <td>
         {{celciusToFahrenheit latestTemperature}}
@@ -52,7 +52,7 @@
         Current: {{latestWindSpeed}}<br>
         Max: {{maxWind}}<br>
         Min: {{minWind}}<br>
-        Trend: {{windTrend}}
+        Trend: <div class="icon"><div class="fa-lg"><i class="{{windTrend}}"></i></div></div>
       </td>
       <td>
         {{beaufort latestWindSpeed}}
@@ -66,7 +66,7 @@
         Current: {{latestPressure}}<br>
         Max: {{maxPressure}}<br>
         Min: {{minPressure}}<br>
-        Trend: {{pressureTrend}}
+        Trend: <div class="icon"><div class="fa-lg"><i class="{{pressureTrend}}"></i></div></div>
       </td>
     </tr>
   </tbody>

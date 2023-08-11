@@ -17,13 +17,20 @@ export const trends = {
     async trend(station, property) {
 
         let trend = 0;
-
+        let icon = "";
         const readings = await readingStore.getReadingsByStationId(station._id);
         let values = [];
         if (readings.length > 2){
             let size = readings.length;
             values = [readings[size-3][property], readings[size-2][property], readings[size-1][property]];
             trend = this.calcTrend(values);
-        } return trend;
+        } 
+        if (trend === 1){
+            icon = "fa-solid fa-arrow-up";
+        } else if (trend === -1){
+            icon = "fa-solid fa-arrow-down";
+        } else {
+            icon = "";
+        } return icon;
     }
 };
