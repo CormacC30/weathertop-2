@@ -3,6 +3,7 @@ import { readingStore } from "../models/reading-store.js";
 import { maxMin } from "../utils/max-min.js";
 import { stationAnalytics } from "../utils/analytics.js";
 import { trends } from "../utils/trends.js";
+import axios from "axios";
 
 export const stationController = {
     async index(request, response) {
@@ -62,6 +63,40 @@ export const stationController = {
         console.log(`adding reading Code: ${newReading.code} Temperature: ${newReading.temperature} Wind Speed: ${newReading.windspeed}`);
         await readingStore.addReading(station._id, newReading);
         response.redirect("/station/" + station._id);
+    },
+
+    async generateReport(request, response) {
+        const station = await stationStore.getStationById(request.params.id);
+        const currentDateTime = new Date();
+        const dateTime = stationAnalytics.formatDateTime(currentDateTime);
+        const apiKey = process.env.OPENWEATHER_API_KEY;
+        const lat = station.latitude;
+        const lng = station.longitude;
+        const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey}`;
+        
+        try {
+            const result = await axios.get(requestUrl);
+    
+            if (result.status === 200) {
+                const reading = result.data.current;
+    
+                const newReading = {
+                    code: reading.weather[0].id,
+                    temperature: reading.temp,
+                    windspeed: reading.wind_speed,
+                    winddirection: reading.wind_deg,
+                    pressure: reading.pressure,
+                    dateTime: dateTime,
+                };
+    
+                await readingStore.addReading(station._id, newReading);
+            }
+    
+            response.redirect("/station/" + station._id);
+        } catch (error) {
+            console.error("Error generating report:", error);
+            // Handle error appropriately
+        }
     },
 
     async deleteReading(request, response) {
