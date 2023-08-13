@@ -28,6 +28,13 @@
       "longitude": 4.125,
       "userid": "51dc75e2-f0ca-4170-824d-c0e1f7f6bd45",
       "_id": "085df8a2-4c06-45ae-95ab-fcff53981a7d"
+    },
+    {
+      "name": "Bantry",
+      "latitude": 51.6833,
+      "longitude": -9.45,
+      "userid": "51dc75e2-f0ca-4170-824d-c0e1f7f6bd45",
+      "_id": "61a84008-b9b8-4610-b18d-6c003aeca9da"
     }
   ]
 }
