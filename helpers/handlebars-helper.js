@@ -10,4 +10,5 @@ export const handlebarsHelpers = {
     celciusToIcon: stationAnalytics.celciusToIcon,
     codeToText: stationAnalytics.codeToText,
     dateFormatter: stationAnalytics.formatDateTime,
+    openWeatherIcon: stationAnalytics.openWeatherIcon,
   };
