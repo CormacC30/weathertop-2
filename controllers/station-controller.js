@@ -24,7 +24,7 @@ export const stationController = {
         const tempTrend = await trends.trend(station, `temperature`);
         const windTrend = await trends.trend(station, `windspeed`);
         const pressureTrend = await trends.trend(station, `pressure`);
-        const chartLabels = await stationController.trendData(request.params.id); //chart data
+        const chartLabels = await trends.trendData(request.params.id); //chart data
         const viewData = {
             title: "Station",
             station: station,
@@ -99,27 +99,6 @@ export const stationController = {
             console.error("Error generating report:", error);
             // Handle error appropriately
         }
-    },
-
-    async trendData(stationid){
-        let report =[];
-        const station = await stationStore.getStationById(stationid);
-        const apiKey = process.env.OPENWEATHER_API_KEY;
-        const lat = station.latitude;
-        const lng = station.longitude;
-        const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey}`;
-        const result = await axios.get(requestUrl);
-        if (result.status == 200){
-            report.tempTrend = [];
-            report.trendLabels = [];
-            const trends = result.data.daily;
-            for(let i=0; i < trends.length; i++) {
-                report.tempTrend.push(trends[i].temp.day);
-                const date = new Date(trends[i].dt*1000);
-                report.trendLabels.push(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`);
-            }
-        }
-        return report;
     },
 
     async deleteReading(request, response) {
