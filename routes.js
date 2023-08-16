@@ -13,6 +13,8 @@ router.get("/signup", accountsController.signup);
 router.get("/logout", accountsController.logout);
 router.post("/register", accountsController.register);
 router.post("/authenticate", accountsController.authenticate);
+router.get("/update/", accountsController.updatePage);
+router.post("/update/", accountsController.updateAccount);
 
 router.get("/dashboard", dashboardController.index);
 router.post("/dashboard/addstation", dashboardController.addStation);
