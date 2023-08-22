@@ -1,15 +1,20 @@
 {{#each stations}}
 <div class="box box-link-hover-shadow">
+  <div class="columns">
+    <div class="column is-one-fifth">
   <h2 class="title">
-    Station Name: {{name}}
+    {{name}} {{>icons/location}}
   </h2>
-  <h2 class="title">
-    Latitude: {{latitude}} (&degN)
+  </div>
+  <div class="column is-auto">
+  <h2 class="is-size-4">
+  
+{{latitude}} &degN
+  <br>
+{{longitude}} &degE
   </h2>
-    <h2 class="title">
-    Longitude: {{longitude}} (&degW)
-  </h2>
-
+  </div>
+</div>
   <h2>Latest Reading:</h2>
 {{>weather-report}}
 

@@ -1,10 +1,22 @@
 {{> menu active="dashboard"}}
 
 <section class="section">
-  <h1 class="title">Your Weather Stations:</h1>
-  {{> list-stations}}
-  {{> map}}
+  <h1 class="title has-text-centered">Your Weather Station Dashboard</h1>
+  <div class="box">
+  <div class="columns">
+    <div class="column is-two-thirds">
+   {{> map}}
+    </div>
+    <div class="column is-auto">
+      <h3 class="title is-size-4">Add New Station:</h3>
   {{> add-station}}
+    </div>
+  </div>
+  </div>
+ <h2 class="title has-text-centered">Your Weather Stations</h2>
+  {{> list-stations}}
+
+
 </section>
 <script>
   var map = L.map('map').setView([51.8985, -8.4756], 9);
