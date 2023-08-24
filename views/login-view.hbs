@@ -13,4 +13,8 @@
       <button class="button is-link">Submit</button>
     </div>
   </form>
+
+  {{#if loginFailed}}
+  <br>{{>failed-auth}}
+  {{/if}}
 </section>

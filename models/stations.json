@@ -16,25 +16,18 @@
       "_id": "91d2e26d-77ae-4e18-8277-adec496701c1"
     },
     {
-      "name": "test",
-      "latitude": 54.354,
-      "longitude": 7.02,
-      "userid": "7254625a-c61e-44e0-8135-0a1b0f8692d9",
-      "_id": "140d5673-295b-4354-ad70-512099cd2510"
-    },
-    {
-      "name": "test 2",
-      "latitude": 51.098,
-      "longitude": 4.125,
-      "userid": "7254625a-c61e-44e0-8135-0a1b0f8692d9",
-      "_id": "085df8a2-4c06-45ae-95ab-fcff53981a7d"
-    },
-    {
       "name": "Bantry",
       "latitude": 51.6833,
       "longitude": -9.45,
       "userid": "7254625a-c61e-44e0-8135-0a1b0f8692d9",
       "_id": "61a84008-b9b8-4610-b18d-6c003aeca9da"
+    },
+    {
+      "name": "Cork",
+      "latitude": 51.8985,
+      "longitude": -8.4756,
+      "userid": "7254625a-c61e-44e0-8135-0a1b0f8692d9",
+      "_id": "dde6502c-6f2e-4322-9496-6adc2d4b3b4d"
     }
   ]
 }

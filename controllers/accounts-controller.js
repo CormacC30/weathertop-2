@@ -11,6 +11,7 @@ export const accountsController = {
   login(request, response) {
     const viewData = {
       title: "Login to the Service",
+      loginFailed: false,
     };
     response.render("login-view", viewData);
   },
@@ -36,12 +37,16 @@ export const accountsController = {
 
   async authenticate(request, response) {
     const user = await userStore.getUserByEmail(request.body.email);
-    if (user) {
+    if (user && user.password === request.body.password) {
       response.cookie("station", user.email);
       console.log(`logging in ${user.email}`);
       response.redirect("/dashboard");
     } else {
-      response.redirect("/login");
+      const viewData = {
+        title: "Login to the Service",
+        loginFailed: true, // Set loginFailed to true
+      };
+      response.render("login-view", viewData); // Render the login view with the loginFailed flag
     }
   },
 
@@ -71,5 +76,10 @@ export const accountsController = {
     
     await userStore.updateUser(loggedInUser._id, updatedFields);
     response.redirect("/login");
-  }
+  },
+/*  
+loginFailed(user){
+  return user === "Login failed";
+},
+*/
 };
