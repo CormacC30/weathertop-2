@@ -77,9 +77,5 @@ export const accountsController = {
     await userStore.updateUser(loggedInUser._id, updatedFields);
     response.redirect("/login");
   },
-/*  
-loginFailed(user){
-  return user === "Login failed";
-},
-*/
+
 };
