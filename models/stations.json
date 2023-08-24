@@ -28,6 +28,20 @@
       "longitude": -8.4756,
       "userid": "7254625a-c61e-44e0-8135-0a1b0f8692d9",
       "_id": "dde6502c-6f2e-4322-9496-6adc2d4b3b4d"
+    },
+    {
+      "name": "Kilkenny",
+      "latitude": 52.6549,
+      "longitude": -7.2464,
+      "userid": "7254625a-c61e-44e0-8135-0a1b0f8692d9",
+      "_id": "5213b308-dfc3-4a03-8908-6dceef19900e"
+    },
+    {
+      "name": "Waterford",
+      "latitude": 52.2593,
+      "longitude": -7.1101,
+      "userid": "7254625a-c61e-44e0-8135-0a1b0f8692d9",
+      "_id": "35da2dc8-fae3-4478-bd97-534ecec1d32f"
     }
   ]
 }

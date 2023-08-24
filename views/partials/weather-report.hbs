@@ -8,7 +8,7 @@
     <tr>
       <th>Weather Code</th>
       <th>Temperature (&degC)</th>
-      <th>Feels Like (&degC)</th>
+      <th>Wind Chill</th>
       <th>Wind Speed (km/h)</th>
       <th>Wind Direction (&deg)</th>
       <th>Pressure (hPa)</th>
@@ -31,6 +31,7 @@
         Min: {{minTemp}} &degC / {{celciusToFahrenheit minTemp}} &degF<br>
       </td>
       <td>
+        <div class="has-text-weight-bold">Feels Like:</div>
         {{windChill latestReading.temperature latestReading.windspeed}} &degC
       </td>
       <td>
@@ -42,8 +43,8 @@
       </td>
 
       <td>
-        {{latestReading.winddirection}}
-        <br>
+        {{latestReading.winddirection}}&deg
+        <hr>
         {{degreesToCompass latestReading.winddirection}}
       </td>
       <td>

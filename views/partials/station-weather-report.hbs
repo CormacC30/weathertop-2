@@ -1,0 +1,64 @@
+<div class="column is-four-fifths">
+<h3 class="title is-4">Latest Weather for {{station.name}}:</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Weather Code</th>
+        <th>Temperature</th>
+        <th>Wind Chill (&degC)</th>
+        <th>Wind Speed</th>
+        <th>Wind Direction</th>
+        <th>Pressure (hPa)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <p class="icon is-large"><img src="https://openweathermap.org/img/wn/{{openWeatherIcon latestCode}}@2x.png">
+          </p>
+          <br>
+          <p>{{codeToText latestCode}}</p>
+          <br>
+          {{latestCode}}
+        </td>
+        <td>
+          <p class="icon is-large"><span class="fa-lg"><i class="{{celciusToIcon temperature}}"></i></span></p>
+          <br>
+          Current: {{latestTemperature}} &degC / {{celciusToFahrenheit latestTemperature}} &degF<br>
+          <div class="icon">
+            <div class="fa-lg"><i class="{{tempTrend}}"></i></div>
+          </div>
+          <br>
+          Max: {{maxTemp}} &degC / {{celciusToFahrenheit maxTemp}} &degF<br>
+          Min: {{minTemp}} &degC / {{celciusToFahrenheit minTemp}} &degF<br>
+        </td>
+        <td>
+          <div class="has-text-weight-bold">Feels Like:</div>
+          {{windChill latestTemperature latestWindSpeed}} (&degC)
+        </td>
+        <td>
+          Current: {{latestWindSpeed}} (km/h) / {{beaufort latestWindSpeed}} (Bft)
+          <div class="icon">
+            <div class="fa-lg"><i class="{{windTrend}}"></i></div>
+          </div>
+          <br>
+          Max: {{maxWind}} (km/h) / {{beaufort maxWind}} (Bft)<br>
+          Min: {{minWind}} (km/h) / {{beaufort minWind}} (Bft)<br>
+        </td>
+        <td>
+          {{latestWindDirection}}&deg
+          <hr>
+          {{degreesToCompass latestWindDirection}}
+        </td>
+        <td>
+          Current: {{latestPressure}} <div class="icon">
+            <div class="fa-lg"><i class="{{pressureTrend}}"></i></div>
+          </div>
+          <br>
+          Max: {{maxPressure}}<br>
+          Min: {{minPressure}}<br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>

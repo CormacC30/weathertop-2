@@ -1,97 +1,35 @@
 {{> menu}}
 
 <section class="section">
-  <div class="title">
-    {{station.name}}
-    <h3>Latitude: {{station.latitude}}</h3>
-    <h3>Longitude: {{station.longitude}}</h3>
+  <div class="columns">
+    <div class="column is-one-fifth">
+      <div class="title">
+        {{station.name}} {{> icons/location}}
+        <hr>
+        <h3 class="is-size-4">Latitude: {{station.latitude}} &degN</h3>
+        <h3 class="is-size-4">Longitude: {{station.longitude}} &degE</h3>
+      </div>
+    </div>
+    <div class="column is-auto">
+
+    </div>
+
+
+    {{#if noReadings}}
+    <div class="column is-four-fifths">
+      <h3 class="title is-4 has-text-centered">No Readings available for {{station.name}}</h3>
+      <p class="has-text-centered">Please enter details of new reading below</p>
+      <br>
+    </div>
+    {{else}}
+    {{> station-weather-report}}
   </div>
-
-  {{#if noReadings}}
-  <h3 class="title is-4 has-text-centered">No Readings available for {{station.name}}</h3>
-  <p class="has-text-centered">Please enter details of new reading below</p>
-  <br>
-  {{else}}
-  <h3 class="title is-4">Latest Reading for {{station.name}}:</h3>
-  <table class="table is-fullwidth">
-    <thead>
-      <tr>
-        <th>Weather Code</th>
-        <th>Temperature (&degC)</th>
-        <th>(&degF)</th>
-        <th>Feels Like (&degC)</th>
-        <th>Wind Speed (km/h)</th>
-        <th>Bft</th>
-        <th>Wind Direction (&deg)</th>
-        <th>Pressure (hPa)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <p class="icon is-large"><img src="https://openweathermap.org/img/wn/{{openWeatherIcon latestCode}}@2x.png"></p>
-          <br>
-          <p>{{codeToText latestCode}}</p>
-          <br>
-          {{latestCode}}
-        </td>
-        <td>
-          <p class="icon is-large"><span class="fa-lg"><i class="{{celciusToIcon temperature}}"></i></span></p>
-          <br>
-          Current: {{latestTemperature}} &degC <div class="icon">
-            <div class="fa-lg"><i class="{{tempTrend}}"></i></div>
-          </div>
-          <br>
-          Max: {{maxTemp}} &degC<br>
-          Min: {{minTemp}} &degC<br>
-        </td>
-        <td>
-          {{celciusToFahrenheit latestTemperature}}
-        </td>
-        <td>
-          {{windChill latestTemperature latestWindSpeed}}
-        </td>
-        <td>
-          Current: {{latestWindSpeed}} <div class="icon">
-            <div class="fa-lg"><i class="{{windTrend}}"></i></div>
-          </div>
-          <br>
-          Max: {{maxWind}}<br>
-          Min: {{minWind}}<br>
-        </td>
-        <td>
-          {{beaufort latestWindSpeed}}
-        </td>
-        <td>
-          {{latestWindDirection}}
-          <br>
-          {{degreesToCompass latestWindDirection}}
-        </td>
-        <td>
-          Current: {{latestPressure}} <div class="icon">
-            <div class="fa-lg"><i class="{{pressureTrend}}"></i></div>
-          </div>
-          <br>
-          Max: {{maxPressure}}<br>
-          Min: {{minPressure}}<br>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-{{> temp-chart}}
+  {{> temp-chart}}
 
   <h3 class="title is-4">All Readings:</h3>
   {{> list-readings}}
   {{/if}}
 
-  {{> add-reading}}
 
-  <section class="section">
-    <form action="/station/{{station._id}}/addreport" method="POST">
-      <div class="field is-grouped">
-        <button class="button is-danger">Auto-Generate Report</button>
-      </div>
-    </form>
-  </section>
 </section>
+  {{> add-reading}}
