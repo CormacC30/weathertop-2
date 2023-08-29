@@ -1,5 +1,4 @@
 import { stationAnalytics } from "../utils/analytics.js";
-import { maxMin } from "../utils/max-min.js";
 
 export const handlebarsHelpers = {
     celciusToFahrenheit: stationAnalytics.celciusToFahrenheit,

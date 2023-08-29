@@ -60,13 +60,8 @@ export const accountsController = {
     response.render("update-account", { user: loggedInUser });
   },
 
-  async updateAccount(request,response){
-    //console.log("Request Body:", request.body)
-    
+  async updateAccount(request,response){   
     const loggedInUser = await accountsController.getLoggedInUser(request);
-
-    //console.log("logged in user: ", loggedInUser);
-
     const updatedFields = { 
       firstName: request.body.firstName,
       lastName: request.body.lastName,

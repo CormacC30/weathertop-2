@@ -75,15 +75,27 @@ export const stationController = {
         const lat = station.latitude;
         const lng = station.longitude;
         const requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey}`;
-        
-        try {
-            const result = await axios.get(requestUrl);
+        const result = await axios.get(requestUrl);
     
             if (result.status === 200) {
                 const reading = result.data.current;
     
+function matchWeatherCode(code) {
+    if (code === 800) return 100; // Clear
+    if (code >= 801 && code <= 804) return 200; // Partial clouds
+    if (code >= 701 && code <= 781) return 300; // Cloudy (fog, mist, etc.)
+    if (code >= 300 && code <= 321) return 400; // Light Showers (drizzle)
+    if (code >= 500 && code <= 531) return 500; // Heavy Showers (rain)
+    if (code >= 400 && code <= 504) return 600; // Rain
+    if (code >= 600 && code <= 622) return 700; // Snow
+    if (code >= 200 && code <= 232) return 800; // Thunder
+  
+    return "Unknown weather condition";
+  };
+
                 const newReading = {
-                    code: reading.weather[0].id,
+                    openWeatherCode: reading.weather[0].id,
+                    code: matchWeatherCode(reading.weather[0].id),
                     temperature: reading.temp,
                     windspeed: reading.wind_speed,
                     winddirection: reading.wind_deg,
@@ -95,10 +107,6 @@ export const stationController = {
             }
     
             response.redirect("/station/" + station._id);
-        } catch (error) {
-            console.error("Error generating report:", error);
-            // Handle error appropriately
-        }
     },
 
     async deleteReading(request, response) {
