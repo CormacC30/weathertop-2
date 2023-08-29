@@ -80,22 +80,8 @@ export const stationController = {
             if (result.status === 200) {
                 const reading = result.data.current;
     
-function matchWeatherCode(code) {
-    if (code === 800) return 100; // Clear
-    if (code >= 801 && code <= 804) return 200; // Partial clouds
-    if (code >= 701 && code <= 781) return 300; // Cloudy (fog, mist, etc.)
-    if (code >= 300 && code <= 321) return 400; // Light Showers (drizzle)
-    if (code >= 500 && code <= 531) return 500; // Heavy Showers (rain)
-    if (code >= 400 && code <= 504) return 600; // Rain
-    if (code >= 600 && code <= 622) return 700; // Snow
-    if (code >= 200 && code <= 232) return 800; // Thunder
-  
-    return "Unknown weather condition";
-  };
-
                 const newReading = {
-                    openWeatherCode: reading.weather[0].id,
-                    code: matchWeatherCode(reading.weather[0].id),
+                    code: stationAnalytics.matchWeatherCode(reading.weather[0].id),
                     temperature: reading.temp,
                     windspeed: reading.wind_speed,
                     winddirection: reading.wind_deg,
