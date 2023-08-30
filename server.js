@@ -1,4 +1,6 @@
 import express from "express";
+import favicon from "serve-favicon";
+import path from "path";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
@@ -12,6 +14,7 @@ const app = express();
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
+app.use(favicon(path.join("public", "images", "favicon.ico")));
 app.use(fileUpload());
 app.engine(".hbs", engine({ extname: ".hbs", helpers: handlebarsHelpers }));
 app.set("view engine", ".hbs");

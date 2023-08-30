@@ -17,10 +17,11 @@
     "express-handlebars": "^6.0.7",
     "fs-extra": "^11.1.0",
     "lowdb": "^5.1.0",
+    "serve-favicon": "^2.5.0",
     "uuid": "^9.0.0"
   },
   "repository": {
-    "url": "https://github.com/wit-hdip-comp-sci-2023/playlist-1"
+    "url": "https://github.com/CormacC30/weathertop-2"
   },
   "license": "MIT",
   "keywords": [
