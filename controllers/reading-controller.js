@@ -14,7 +14,8 @@ export const readingController = {
       };
       response.render("reading-view", viewData);
     },
-  
+  /*update a reading, takes in new updated fields input by user and
+   uses updateReading to write in the updated reading to database*/
     async update(request, response) {
       const stationId = request.params.stationid;
       const readingId = request.params.readingid;

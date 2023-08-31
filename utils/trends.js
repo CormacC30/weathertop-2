@@ -3,7 +3,7 @@ import { stationStore } from "../models/station-store.js";
 import axios from "axios";
 
 export const trends = {
-
+//logic for calculating trends 
     calcTrend(values) {
         let trend = 0;
         if (values.length > 2) {
@@ -15,7 +15,7 @@ export const trends = {
         } return trend;
     },
 
-
+//returns the font awesome icon for increasing/decreasing trends (of any property)
     async trend(station, property) {
 
         let trend = 0;
@@ -36,7 +36,11 @@ export const trends = {
         } return icon;
     },
 
-
+//Used for the trend chart in station-view.
+/*Creates an array of data from json file retrieved from API, 
+then creates subarrays for temperature data and time (daily in this case)
+Could be reused for other parameters such as precipitation - didn't do this 
+in interest of time.*/
     async trendData(stationid){
         let report =[];
         const station = await stationStore.getStationById(stationid);

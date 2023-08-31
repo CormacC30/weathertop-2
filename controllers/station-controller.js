@@ -48,7 +48,7 @@ export const stationController = {
         };
         response.render("station-view", viewData);
     },
-
+//Add a reading
     async addReading(request, response) {
         const station = await stationStore.getStationById(request.params.id);        
         const currentDateTime = new Date();
@@ -66,7 +66,7 @@ export const stationController = {
         await readingStore.addReading(station._id, newReading);
         response.redirect("/station/" + station._id);
     },
-
+//Auto generate a report using OpenWeather API
     async generateReport(request, response) {
         const station = await stationStore.getStationById(request.params.id);
         const currentDateTime = new Date();
@@ -94,7 +94,7 @@ export const stationController = {
     
             response.redirect("/station/" + station._id);
     },
-
+//delete a reading
     async deleteReading(request, response) {
         const stationId = request.params.stationid;
         const readingId = request.params.readingid;

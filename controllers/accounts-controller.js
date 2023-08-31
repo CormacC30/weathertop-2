@@ -59,7 +59,8 @@ export const accountsController = {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     response.render("update-account", { user: loggedInUser });
   },
-
+/*Edit User Account Details 
+(Release 3 feature) */
   async updateAccount(request,response){   
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const updatedFields = { 

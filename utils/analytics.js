@@ -11,16 +11,16 @@ async getLatestReading(stationId) {
         return "No Readings available";
     };
   },
-
+//For if no readings are available - latest reading is passed to this function in station-controller.js
   noReadings(reading) {
     return reading === "No Readings available";
   },
-
+//convert degC to degF
 celciusToFahrenheit(temperature) {
   let num = ((temperature * 9 / 5) + 32);
     return num.toFixed(2);
 },
-
+//converts km/h to Bft
 beaufort(windspeed){
     if (windspeed >= 0.0 && windspeed < 1.0) {
         return 0;
@@ -60,12 +60,12 @@ beaufort(windspeed){
       }
       return 0;
 },
-
+//calculates windchill
 windChill(temperature, windspeed) {
     let num = (13.12 + temperature * 0.6215 - 11.37 * Math.pow(windspeed, 0.16) + 0.3965 * temperature * Math.pow(windspeed, 0.16));
     return num.toFixed(2);
 },
-
+// gives text compass direction for specified wind direction range
 degreesToCompass(winddirection) {
     if (winddirection >= 348.75 || winddirection < 11.25) {
         return "North";
@@ -107,7 +107,7 @@ degreesToCompass(winddirection) {
 weatherIcon(code) {
     return weatherIcons[code];
 },
-
+//individual temp font awesome icons depending on temperature range
 celciusToIcon(temperature) {
     if (temperature <= 5) {
         return "fa-solid fa-temperature-empty";
@@ -133,7 +133,6 @@ celciusToIcon(temperature) {
       return "fa-solid fa-temperature-half";
 },
 
-
 codeToText(code) {
     return weatherDescriptions[code] || "Unknown";
 },
@@ -141,7 +140,11 @@ codeToText(code) {
 formatDateTime(dateTime){
 return dateFormatter.format(dateTime);
 },
-
+/* simplified set of weather codes from Open weather.
+Earlier version of release 4 used all 55 codes but there was a mismatch 
+for earlier entries in the db - this function matches the specific weather id
+retrieved from OpenWeather to one of the existing 8 codes.
+..Unfortunately can no longer select "tornado" ;( */
 matchWeatherCode(code) {
   if (code === 800) return 100; // Clear
   if (code >= 801 && code <= 804) return 200; // Partial clouds
@@ -157,7 +160,7 @@ matchWeatherCode(code) {
 
 };
 
-//Open Weather Icons 
+//initialisation block forOpen Weather Icons: Inserted to URL to retrieve the image
 const weatherIcons = {  
     100: "01d",
     200: "02d",

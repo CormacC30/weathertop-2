@@ -38,7 +38,7 @@ export const dashboardController = {
     response.render("dashboard-view", viewData);
 
   },
-
+//add a station
   async addStation(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const newStation = {
@@ -52,6 +52,7 @@ export const dashboardController = {
     response.redirect("/dashboard");
   },
   
+  //delete a station
   async deleteStation(request, response) {
     const stationId = request.params.id;
     console.log(`Deleting station called: ${stationId}`);
