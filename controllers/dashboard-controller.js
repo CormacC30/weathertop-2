@@ -10,7 +10,8 @@ export const dashboardController = {
 
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const stations = await stationStore.getStationsByUserId(loggedInUser._id);
-    
+    /*loops through all stations in the array of stations to get latest reading
+    max, min, and trend icons for each - in order to display on dashboard*/
     for(const station of stations){
       const latestReading = await stationAnalytics.getLatestReading(station._id);
       station.latestReading = latestReading;
